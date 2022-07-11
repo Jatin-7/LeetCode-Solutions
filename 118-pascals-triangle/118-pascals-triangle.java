@@ -13,6 +13,7 @@ class Solution {
                 }
             }
             list.add(temp);
+            System.gc();
         }
         System.gc();
         return list;
