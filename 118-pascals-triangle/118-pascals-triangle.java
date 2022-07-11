@@ -24,6 +24,7 @@ class Solution {
             List l = toList(arr[i]);
             list.add(l);
         }
+        System.gc();
         return list;
     }
 }
