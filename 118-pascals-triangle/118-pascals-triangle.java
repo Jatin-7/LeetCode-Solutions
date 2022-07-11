@@ -2,7 +2,6 @@ class Solution {
     public List<List<Integer>> generate(int numRows) {
         if(numRows == 0) return new ArrayList<>();
         List<List<Integer>> list = new ArrayList<List<Integer>>();
-    
         for(int i = 0; i<numRows; i++){
             List<Integer> temp = new ArrayList<>();
             for(int j = 0; j<=i; j++){
