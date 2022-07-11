@@ -10,6 +10,7 @@ class Solution {
                 c++;
             }
         }
+        System.gc();
         return arr;
     }
 }
