@@ -7,8 +7,21 @@ class Solution {
         
         int sol[][] = new int[r][c];
         
-        for(int i = 0; i<r*c; i++){
-            sol[i/c][i%c] = mat[i/n][i%n];
+        int tempArr[] = new int[m*n];
+        int tC = 0;
+        for(int i = 0; i<m; i++){
+            for(int j = 0; j<n; j++){
+                tempArr[tC] = mat[i][j];
+                tC++;
+            }
+        }
+        
+        tC = 0;
+        for(int i = 0; i<r; i++){
+            for(int j = 0; j<c; j++){
+                sol[i][j] = tempArr[tC];
+                tC++;
+            }
         }
         return sol;
     }
