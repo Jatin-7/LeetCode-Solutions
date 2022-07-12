@@ -66,7 +66,8 @@ class Solution {
         
         if(isValidConfig(board, 9)){
             res = true;
-        }   
+        }
+        System.gc();
         return res;
     }
 }
