@@ -1,30 +1,19 @@
 class Solution {
     
-    public static boolean binSearch(int[] arr, int target) {
-        int start = 0;
-        int end = arr.length;
-        while(start<end){
-            int mid = start + (end-start)/2;
-            if(arr[mid]==target){
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length; int n = matrix[0].length;
+        int i = 0, j = n-1;
+        while(i<m && j>=0) {
+            if(matrix[i][j] == target){
                 return true;
             }
-            if(target>arr[mid]){
-                start++;
+            else if(target < matrix[i][j]){
+                j--;
             }
             else{
-                end--;
+                i++;
             }
         }
         return false;
-    }
-    
-    public boolean searchMatrix(int[][] matrix, int target) {
-        boolean res = false;
-        for(int i = 0; i < matrix.length; i++) {
-            if(binSearch(matrix[i], target)){
-                res = true;
-            }
-        }
-        return res;
     }
 }
