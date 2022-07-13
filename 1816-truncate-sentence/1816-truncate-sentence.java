@@ -6,6 +6,7 @@ class Solution {
         for(int i = 0; i < k; i++) {
             res = res + arr[i] + " ";
         }
+        System.gc();
         return res.trim();
     }
 }
