@@ -11,7 +11,7 @@ class Solution {
             char tmp2 = t.charAt(i);
             map2.put(tmp2, map2.getOrDefault(tmp2, 0)+1);
         }
-        
+        System.gc();
         return map1.equals(map2);
     }
 }
