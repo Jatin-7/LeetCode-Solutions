@@ -20,25 +20,31 @@ class Solution {
             return false;
         }
         
-        Queue<TreeNode> nodes = new LinkedList<>();
-        nodes.add(root);
-        while(!nodes.isEmpty()) {
-            TreeNode curr = nodes.poll();
-            if(curr.left == null && curr.right == null){
-                if(targetSum == curr.val){
-                    return true;
-                }
-            }
-            
-            if(curr.left != null) {
-                curr.left.val = curr.left.val + curr.val;
-                nodes.add(curr.left);
-            }
-            if(curr.right != null) {
-                curr.right.val = curr.right.val + curr.val;
-                nodes.add(curr.right);
-            }
+        if(root.left == null && root.right == null && root.val == targetSum){
+            return true;
         }
-        return false;
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val); 
+        
+        
+//         Queue<TreeNode> nodes = new LinkedList<>();
+//         nodes.add(root);
+//         while(!nodes.isEmpty()) {
+//             TreeNode curr = nodes.poll();
+//             if(curr.left == null && curr.right == null){
+//                 if(targetSum == curr.val){
+//                     return true;
+//                 }
+//             }
+            
+//             if(curr.left != null) {
+//                 curr.left.val = curr.left.val + curr.val;
+//                 nodes.add(curr.left);
+//             }
+//             if(curr.right != null) {
+//                 curr.right.val = curr.right.val + curr.val;
+//                 nodes.add(curr.right);
+//             }
+//         }
+//         return false;
     }
 }
